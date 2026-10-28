@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
     usuario TEXT NOT NULL UNIQUE,
     senha TEXT NOT NULL,
     tipo TEXT NOT NULL
-        CHECK (tipo IN ('Operador', 'Parlamentar')),
+        CHECK (tipo IN ('Admin', 'Operador', 'Parlamentar')),
     ativo INTEGER NOT NULL DEFAULT 1
         CHECK (ativo IN (0, 1))
 );

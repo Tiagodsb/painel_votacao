@@ -1,9 +1,9 @@
-export type UsuarioTipo = 'Operador' | 'Parlamentar';
+export type UsuarioTipo = 'Admin' | 'Operador' | 'Parlamentar';
 
 export interface Usuario {
     id: number;
     usuario: string;
-    senhaHash: string;
+    senha: string;
     tipo: UsuarioTipo;
     ativo: boolean;
 }
