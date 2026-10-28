@@ -1,7 +1,10 @@
 import 'dotenv/config';
-
-const PORT = parseInt(`${process.env.PORT || 3001}`);
-
 import app from './app.js';
+import db from './db.js';
 
-app.listen(PORT, () => console.log(`Server is running at ${PORT}.`));
+console.log(db.prepare('SELECT sqlite_version() AS version').get());
+
+
+const PORT = Number(process.env.PORT ?? 3001)
+
+app.listen(PORT, () => console.log(`API rodando na porta ${PORT}.`));
